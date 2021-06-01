@@ -1,4 +1,4 @@
-let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+/*let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 
 // this function is copied from W3 school
@@ -335,3 +335,36 @@ Lima.getCookiesPerHour();
 Lima.render();
 console.log(Lima.customersPerHour);
 console.log(Lima.cookiesPerHour);
+*/
+
+
+
+//Lab07
+
+let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
+
+function Store(name,minCustomers,maxCustomers,avgCookies){
+  this.name=name;
+  this.minCustomers=minCustomers;
+  this.maxCustomers=maxCustomers;
+  this.avgCookies=avgCookies;
+
+}
+
+let seattle= new Store(seattle,23, 65, 6.3);
+let Tokyo= new Store(Tokyo, 3, 24, 1.2);
+let Dubai= new Store(Dubai, 11, 38, 3.7);
+let Paris=new Store(Paris, 20, 38 ,2.3);
+let Lima =new Store(Lima, 2, 16, 4.6);
+
+let parent=document.getElementById('Box');
+
+let table=document.createElement('table');
+
+parent.appendChild.(table);
+
+
+
+
+
