@@ -1,166 +1,337 @@
-let hours = ['7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm']
+let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
+
+// this function is copied from W3 school
+//it creates random numbers
+function random(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 //seattle
 
 let seattle = {
-    name: 'seattle',
-    min: 23,
-    max: 65,
-    avg: 6.3,
-    custPerHour:[],
-    cookiesPerHour:[],
-    noCustPerHour: function () {
-        for (let i = 0; i < hours.length; i++) {
-            this.custPerHour.push(everyHour(this.min, this.max));
+  name: 'seattle',
+  minCustomers: 23,
+  maxCustomers: 65,
+  avgCookies: 6.3,
+  customersPerHour: [], //here i will push a number of customers for each hour(14n) then each no will be multiplied with avg
+  cookiesPerHour: [],
+  //This method pushes random numbers to the array
+  getCustomersPerHour: function () {
+    for (let i = 0; i < hours.length; i++) {
+      this.customersPerHour.push(random(this.minCustomers, this.maxCustomers));
 
 
-        }
-    },
-
-        
-    
-noCookiesPerHour: function () {
-        for (let i = 0; i < hours.length; i++) {
-            this.cookiesPerHour.push(Math.floor(this.avg * this.custPerHour[i]));
-            
-        }
-    
     }
-}
-/*for (let i = 0; i < hours.length; i++) {
-    seattle.avg*noCookiesPerHour()[i]
-    
-}*/
+  },
 
 
-seattle.noCustPerHour()
-seattle.noCookiesPerHour()
-console.log(seattle.cookiesPerHour)
+
+  getCookiesPerHour: function () {
+    for (let i = 0; i < hours.length; i++) {
+      this.cookiesPerHour.push(Math.floor(this.avgCookies * this.customersPerHour[i]));
+
+    }
+
+  },
+
+  //get parent by id
+  render: function () {
+    let parent = document.getElementById('parent');
 
 
-function everyHour(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+    //to make h3 tag
+    let nameElement = document.createElement('h3');
+
+    parent.appendChild(nameElement);
+
+    nameElement.textContent=this.name;
+
+    //to make ul
+    let ulElement=document.createElement('ul');
+
+    parent.appendChild(ulElement);
+
+    //to make li
+    for (let i = 0; i < hours.length; i++) {
+
+      let liElement=document.createElement('li');
+
+      ulElement.appendChild(liElement);
+
+      liElement.textContent= `${hours[i]} : ${this.cookiesPerHour[i]} cookies`;
+    }
+  }
+};
+
+//calling the functions
+
+seattle.getCustomersPerHour();
+seattle.getCookiesPerHour();
+seattle.render();
+console.log(seattle.customersPerHour);
+console.log(seattle.cookiesPerHour);
+
+
 
 
 //Tokyo
 let Tokyo = {
-    name: 'Tokyo',
-    min: 3,
-    max: 24,
-    avg: 1.3,
-    custoPerHour:[],
-    cookiiesPerHour:[],
-    noCustoPerHour: function () {
-        for (let i = 0; i < hours.length; i++) {
-            this.custoPerHour.push(everyHour(this.min, this.max));
+  name: 'Tokyo',
+  minCustomers: 23,
+  maxCustomers: 65,
+  avgCookies: 6.3,
+  customersPerHour: [], //here i will push a number of customers for each hour(14n) then each no will be multiplied with avg
+  cookiesPerHour: [],
+  //This method pushes random numbers to the array
+  getCustomersPerHour: function () {
+    for (let i = 0; i < hours.length; i++) {
+      this.customersPerHour.push(random(this.minCustomers, this.maxCustomers));
 
-        }
-    },
 
-        
-    
-noCookiiesPerHour: function () {
-        for (let i = 0; i < hours.length; i++) {
-            this.cookiiesPerHour.push(Math.floor(this.avg * this.custoPerHour[i]));
-            
-        }
-    
     }
-}
-Tokyo.noCustoPerHour()
-Tokyo.noCookiiesPerHour()
-console.log(Tokyo.cookiiesPerHour)
+  },
+
+
+
+  getCookiesPerHour: function () {
+    for (let i = 0; i < hours.length; i++) {
+      this.cookiesPerHour.push(Math.floor(this.avgCookies * this.customersPerHour[i]));
+
+    }
+
+  },
+
+  //get parent by id
+  render: function () {
+    let parent = document.getElementById('parent');
+
+
+    //to make h3 tag
+    let nameElement = document.createElement('h3');
+
+    parent.appendChild(nameElement);
+
+    nameElement.textContent=this.name;
+
+    //to make ul
+    let ulElement=document.createElement('ul');
+
+    parent.appendChild(ulElement);
+
+    //to make li
+    for (let i = 0; i < hours.length; i++) {
+
+      let liElement=document.createElement('li');
+
+      ulElement.appendChild(liElement);
+
+      liElement.textContent= `${hours[i]} : ${this.cookiesPerHour[i]} cookies`;
+    }
+  }
+};
+
+//calling the functions
+
+Tokyo.getCustomersPerHour();
+Tokyo.getCookiesPerHour();
+Tokyo.render();
+console.log(Tokyo.customersPerHour);
+console.log(Tokyo.cookiesPerHour);
 
 
 //Dubai
 
 let Dubai = {
-    name: 'Dubai',
-    min: 11,
-    max: 38,
-    avg: 3.7,
-    customPerHour:[],
-    cookieesPerHour:[],
-    dubaiCustPerHour: function () {
-        for (let i = 0; i < hours.length; i++) {
-            this.customPerHour.push(everyHour(this.min, this.max));
+  name: 'Dubai',
+  minCustomers: 23,
+  maxCustomers: 65,
+  avgCookies: 6.3,
+  customersPerHour: [], //here i will push a number of customers for each hour(14n) then each no will be multiplied with avg
+  cookiesPerHour: [],
+  //This method pushes random numbers to the array
+  getCustomersPerHour: function () {
+    for (let i = 0; i < hours.length; i++) {
+      this.customersPerHour.push(random(this.minCustomers, this.maxCustomers));
 
-        }
-    },
 
-        
-    
-dubaiCookiesPerHour: function () {
-        for (let i = 0; i < hours.length; i++) {
-            this.cookieesPerHour.push(Math.floor(this.avg * this.customPerHour[i]));
-            
-        }
-    
     }
-}
-Dubai.dubaiCustPerHour()
-Dubai.dubaiCookiesPerHour()
-console.log(Dubai.cookieesPerHour)
+  },
+
+
+
+  getCookiesPerHour: function () {
+    for (let i = 0; i < hours.length; i++) {
+      this.cookiesPerHour.push(Math.floor(this.avgCookies * this.customersPerHour[i]));
+
+    }
+
+  },
+
+  //get parent by id
+  render: function () {
+    let parent = document.getElementById('parent');
+
+
+    //to make h3 tag
+    let nameElement = document.createElement('h3');
+
+    parent.appendChild(nameElement);
+
+    nameElement.textContent=this.name;
+
+    //to make ul
+    let ulElement=document.createElement('ul');
+
+    parent.appendChild(ulElement);
+
+    //to make li
+    for (let i = 0; i < hours.length; i++) {
+
+      let liElement=document.createElement('li');
+
+      ulElement.appendChild(liElement);
+
+      liElement.textContent= `${hours[i]} : ${this.cookiesPerHour[i]} cookies`;
+    }
+  }
+};
+
+//calling the functions
+
+Dubai.getCustomersPerHour();
+Dubai.getCookiesPerHour();
+Dubai.render();
+console.log(Dubai.customersPerHour);
+console.log(Dubai.cookiesPerHour);
 
 
 //Paris
 
 let Paris = {
-    name: 'Paris',
-    min: 20,
-    max: 38,
-    avg: 2.3,
-    customePerHour:[],
-    cookiessPerHour:[],
-    parisCustPerHour: function () {
-        for (let i = 0; i < hours.length; i++) {
-            this.customePerHour.push(everyHour(this.min, this.max));
+  name: 'Paris',
+  minCustomers: 23,
+  maxCustomers: 65,
+  avgCookies: 6.3,
+  customersPerHour: [], //here i will push a number of customers for each hour(14n) then each no will be multiplied with avg
+  cookiesPerHour: [],
+  //This method pushes random numbers to the array
+  getCustomersPerHour: function () {
+    for (let i = 0; i < hours.length; i++) {
+      this.customersPerHour.push(random(this.minCustomers, this.maxCustomers));
 
-        }
-    },
 
-        
-    
-parisCookiesPerHour: function () {
-        for (let i = 0; i < hours.length; i++) {
-            this.cookiessPerHour.push(Math.floor(this.avg * this.customePerHour[i]));
-            
-        }
-    
     }
-}
-Paris.parisCustPerHour()
-Paris.parisCookiesPerHour()
-console.log(Paris.cookiessPerHour)
+  },
+
+
+
+  getCookiesPerHour: function () {
+    for (let i = 0; i < hours.length; i++) {
+      this.cookiesPerHour.push(Math.floor(this.avgCookies * this.customersPerHour[i]));
+
+    }
+
+  },
+
+  //get parent by id
+  render: function () {
+    let parent = document.getElementById('parent');
+
+
+    //to make h3 tag
+    let nameElement = document.createElement('h3');
+
+    parent.appendChild(nameElement);
+
+    nameElement.textContent=this.name;
+
+    //to make ul
+    let ulElement=document.createElement('ul');
+
+    parent.appendChild(ulElement);
+
+    //to make li
+    for (let i = 0; i < hours.length; i++) {
+
+      let liElement=document.createElement('li');
+
+      ulElement.appendChild(liElement);
+
+      liElement.textContent= `${hours[i]} : ${this.cookiesPerHour[i]} cookies`;
+    }
+  }
+};
+
+//calling the functions
+
+Paris.getCustomersPerHour();
+Paris.getCookiesPerHour();
+Paris.render();
+console.log(Paris.customersPerHour);
+console.log(Paris.cookiesPerHour);
 
 
 //Lima
 
 let Lima = {
-    name: 'Lima',
-    min: 2,
-    max: 16,
-    avg: 4.6,
-    customerPerHour:[],
-    cookieessPerHour:[],
-    limaCustPerHour: function () {
-        for (let i = 0; i < hours.length; i++) {
-            this.customerPerHour.push(everyHour(this.min, this.max));
+  name: 'Lima',
+  minCustomers: 23,
+  maxCustomers: 65,
+  avgCookies: 6.3,
+  customersPerHour: [], //here i will push a number of customers for each hour(14n) then each no will be multiplied with avg
+  cookiesPerHour: [],
+  //This method pushes random numbers to the array
+  getCustomersPerHour: function () {
+    for (let i = 0; i < hours.length; i++) {
+      this.customersPerHour.push(random(this.minCustomers, this.maxCustomers));
 
-        }
-    },
 
-        
-    
-limaCookiesPerHour: function () {
-        for (let i = 0; i < hours.length; i++) {
-            this.cookieessPerHour.push(Math.floor(this.avg * this.customerPerHour[i]));
-            
-        }
-    
     }
-}
-Lima.limaCustPerHour()
-Lima.limaCookiesPerHour()
-console.log(Lima.cookieessPerHour)
+  },
+
+
+
+  getCookiesPerHour: function () {
+    for (let i = 0; i < hours.length; i++) {
+      this.cookiesPerHour.push(Math.floor(this.avgCookies * this.customersPerHour[i]));
+
+    }
+
+  },
+
+  //get parent by id
+  render: function () {
+    let parent = document.getElementById('parent');
+
+
+    //to make h3 tag
+    let nameElement = document.createElement('h3');
+
+    parent.appendChild(nameElement);
+
+    nameElement.textContent=this.name;
+
+    //to make ul
+    let ulElement=document.createElement('ul');
+
+    parent.appendChild(ulElement);
+
+    //to make li
+    for (let i = 0; i < hours.length; i++) {
+
+      let liElement=document.createElement('li');
+
+      ulElement.appendChild(liElement);
+
+      liElement.textContent= `${hours[i]} : ${this.cookiesPerHour[i]} cookies`;
+    }
+  }
+};
+
+//calling the functions
+
+Lima.getCustomersPerHour();
+Lima.getCookiesPerHour();
+Lima.render();
+console.log(Lima.customersPerHour);
+console.log(Lima.cookiesPerHour);
