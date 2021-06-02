@@ -7,3 +7,6 @@ table,th,td {
   border-collapse: collapse;
 }
 
+section{
+  background-color: coral;
+}
