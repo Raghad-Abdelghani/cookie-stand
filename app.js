@@ -476,7 +476,8 @@ Store.prototype.render=function(){
   total.textContent=this.total;
 };
 
-//seattle.render();
+
+
 
 
 
@@ -488,3 +489,48 @@ for (let i = 0; i < stores.length; i++) {
   stores[i].render();
 
 }
+
+//making the fotter row
+
+let footerRow=document.createElement('tr');
+tableElement.appendChild(footerRow);
+
+//making the first footerTD
+
+let firstFooterTd=document.createElement('td');
+
+footerRow.appendChild(firstFooterTd);
+
+firstFooterTd.textContent='Totals';
+
+let lastTd=0;
+//making the row td
+
+for (let i = 0; i < hours.length; i++) {
+
+  let totalForEachHour =0;
+
+  for (let j = 0; j < stores.length; j++) {
+
+    totalForEachHour += stores[j].cookiesPerHour[i];
+    lastTd += stores[j].cookiesPerHour[i];
+
+  }
+
+  let footerTotal=document.createElement('th');
+
+  footerRow.appendChild(footerTotal);
+
+  footerTotal.textContent=totalForEachHour;
+
+
+}
+
+//making the last TD
+
+let lastTh=document.createElement('th');
+
+footerRow.appendChild(lastTh);
+
+lastTh.textContent=lastTd;
+
