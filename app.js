@@ -491,46 +491,89 @@ for (let i = 0; i < stores.length; i++) {
 }
 
 //making the fotter row
+function footerTotalRow(){
+  let footerRow=document.createElement('tr');
+  tableElement.appendChild(footerRow);
 
-let footerRow=document.createElement('tr');
-tableElement.appendChild(footerRow);
+  //making the first footerTD
 
-//making the first footerTD
+  let firstFooterTd=document.createElement('td');
 
-let firstFooterTd=document.createElement('td');
+  footerRow.appendChild(firstFooterTd);
 
-footerRow.appendChild(firstFooterTd);
+  firstFooterTd.textContent='Totals';
 
-firstFooterTd.textContent='Totals';
+  let lastTd=0;
+  //making the row td
 
-let lastTd=0;
-//making the row td
+  for (let i = 0; i < hours.length; i++) {
 
-for (let i = 0; i < hours.length; i++) {
+    let totalForEachHour =0;
 
-  let totalForEachHour =0;
+    for (let j = 0; j < stores.length; j++) {
 
-  for (let j = 0; j < stores.length; j++) {
+      totalForEachHour += stores[j].cookiesPerHour[i];
+      lastTd += stores[j].cookiesPerHour[i];
 
-    totalForEachHour += stores[j].cookiesPerHour[i];
-    lastTd += stores[j].cookiesPerHour[i];
+    }
+
+    let footerTotal=document.createElement('th');
+
+    footerRow.appendChild(footerTotal);
+
+    footerTotal.textContent=totalForEachHour;
+
 
   }
 
-  let footerTotal=document.createElement('th');
+  //making the last TD
 
-  footerRow.appendChild(footerTotal);
+  let lastTh=document.createElement('th');
 
-  footerTotal.textContent=totalForEachHour;
+  footerRow.appendChild(lastTh);
 
+  lastTh.textContent=lastTd;
 
 }
 
-//making the last TD
+footerTotalRow();
 
-let lastTh=document.createElement('th');
 
-footerRow.appendChild(lastTh);
+//adding the form
 
-lastTh.textContent=lastTd;
+
+let form=document.getElementById('form');
+
+
+
+form.addEventListener('submit',submitter);
+
+function submitter(event){
+
+  event.preventDefault();
+
+  let name=event.target.nameField.value;
+
+  let minCust=event.target.minCustomers.value;
+
+  let maxCust=event.target.maxCustomers.value;
+
+  let avg=event.target.avgCookies.value;
+
+  let newShop = new Store (name, minCust, maxCust, avg);
+
+  tableElement.textContent='';
+
+  headHoursRow();
+
+
+  for (let i = 0; i < stores.length; i++) {
+    stores[i].getCookiesEachHour();
+    stores[i].render();
+  }
+
+  footerTotalRow();
+}
+
+
 
