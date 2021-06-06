@@ -1,14 +1,14 @@
 body{
-    background-color: bisque;
+    background-color: #c1946a;
 }
 
 section{
-    background-color: coral;
+    background-color: #82b74b;
   }
 
 
   h1{
-    color:rgb(77, 10, 10);
+    color:#283f15;
     float:left;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
@@ -20,21 +20,41 @@ section{
 
   a{
       text-decoration: none;
-      color:rgb(77, 10, 10);
+      color:#3e4444;
   }
 
 
   #branches{
-      background-color:coral;
-      color:rgb(77, 10, 10);
+      background-color:#82b74b;
+      color:#3e4444;
       font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
   h2{
       font-family: Arial, Helvetica, sans-serif;
-      color:rgb(77, 10, 10);
+      color:#3e4444;
   }
 
   #hours{
-      color: brown;
+      color: #3e4444;
+      background-color:#82b74b ;
   }
+
+  #images{
+      
+background-color:#e3eaa7 ;
+  }
+
+  p{
+      font-size:x-large;
+      font-family: monospace;
+      color:#3e4444 ;
+
+  }
+
+  #fishcookie{
+     display: inline;;
+  }
+
+  #cutter{
+display: inline;  }

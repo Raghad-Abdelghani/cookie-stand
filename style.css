@@ -3,7 +3,21 @@
 }
 
 table,th,td {
-  border: solid coral 1px;
+  border: solid rgb(19, 63, 146) 1px;
   border-collapse: collapse;
+  color:rgb(6, 18, 41);
 }
 
+body{
+  background-color: #c1946a;
+}
+
+
+form{
+  background-color: cornflowerblue;
+}
+
+a{
+  text-decoration: none;
+  
+}
