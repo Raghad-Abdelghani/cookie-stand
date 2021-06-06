@@ -1,0 +1,40 @@
+body{
+    background-color: bisque;
+}
+
+section{
+    background-color: coral;
+  }
+
+
+  h1{
+    color:rgb(77, 10, 10);
+    float:left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  #logo{
+   padding-left: 900px;
+
+  }
+
+  a{
+      text-decoration: none;
+      color:rgb(77, 10, 10);
+  }
+
+
+  #branches{
+      background-color:coral;
+      color:rgb(77, 10, 10);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  h2{
+      font-family: Arial, Helvetica, sans-serif;
+      color:rgb(77, 10, 10);
+  }
+
+  #hours{
+      color: brown;
+  }
