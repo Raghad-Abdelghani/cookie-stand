@@ -7,7 +7,7 @@ function random(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 //seattle
-
+//Object with properties and methods
 let seattle = {
   name: 'seattle',
   minCustomers: 23,
@@ -25,7 +25,6 @@ let seattle = {
   },
 
 
-
   getCookiesPerHour: function () {
     for (let i = 0; i < hours.length; i++) {
       this.cookiesPerHour.push(Math.floor(this.avgCookies * this.customersPerHour[i]));
@@ -60,6 +59,19 @@ let seattle = {
 
       liElement.textContent= `${hours[i]} : ${this.cookiesPerHour[i]} cookies`;
     }
+
+
+    // to make the total
+
+    let total = this.cookiesPerHour.reduce((a, b) => {
+      return a + b;
+    });
+
+    let totalElement = document.createElement('li');
+
+    ulElement.appendChild(totalElement);
+
+    totalElement.textContent= `Total : ${total}`;
   }
 };
 
@@ -77,9 +89,9 @@ console.log(seattle.cookiesPerHour);
 //Tokyo
 let Tokyo = {
   name: 'Tokyo',
-  minCustomers: 23,
-  maxCustomers: 65,
-  avgCookies: 6.3,
+  minCustomers: 3,
+  maxCustomers: 24,
+  avgCookies: 1.2,
   customersPerHour: [], //here i will push a number of customers for each hour(14n) then each no will be multiplied with avg
   cookiesPerHour: [],
   //This method pushes random numbers to the array
@@ -127,6 +139,16 @@ let Tokyo = {
 
       liElement.textContent= `${hours[i]} : ${this.cookiesPerHour[i]} cookies`;
     }
+
+    let total = this.cookiesPerHour.reduce((a, b) => {
+      return a + b;
+    });
+
+    let totalElement = document.createElement('li');
+
+    ulElement.appendChild(totalElement);
+
+    totalElement.textContent= `Total : ${total}`;
   }
 };
 
@@ -143,9 +165,9 @@ console.log(Tokyo.cookiesPerHour);
 
 let Dubai = {
   name: 'Dubai',
-  minCustomers: 23,
-  maxCustomers: 65,
-  avgCookies: 6.3,
+  minCustomers: 11,
+  maxCustomers: 38,
+  avgCookies: 3.7,
   customersPerHour: [], //here i will push a number of customers for each hour(14n) then each no will be multiplied with avg
   cookiesPerHour: [],
   //This method pushes random numbers to the array
@@ -193,6 +215,15 @@ let Dubai = {
 
       liElement.textContent= `${hours[i]} : ${this.cookiesPerHour[i]} cookies`;
     }
+    let total = this.cookiesPerHour.reduce((a, b) => {
+      return a + b;
+    });
+
+    let totalElement = document.createElement('li');
+
+    ulElement.appendChild(totalElement);
+
+    totalElement.textContent= `Total : ${total}`;
   }
 };
 
@@ -209,9 +240,9 @@ console.log(Dubai.cookiesPerHour);
 
 let Paris = {
   name: 'Paris',
-  minCustomers: 23,
-  maxCustomers: 65,
-  avgCookies: 6.3,
+  minCustomers: 20,
+  maxCustomers: 38,
+  avgCookies: 2.3,
   customersPerHour: [], //here i will push a number of customers for each hour(14n) then each no will be multiplied with avg
   cookiesPerHour: [],
   //This method pushes random numbers to the array
@@ -259,6 +290,16 @@ let Paris = {
 
       liElement.textContent= `${hours[i]} : ${this.cookiesPerHour[i]} cookies`;
     }
+    let total = this.cookiesPerHour.reduce((a, b) => {
+      return a + b;
+    });
+
+    let totalElement = document.createElement('li');
+
+    ulElement.appendChild(totalElement);
+
+    totalElement.textContent= `Total : ${total}`;
+  
   }
 };
 
@@ -275,9 +316,9 @@ console.log(Paris.cookiesPerHour);
 
 let Lima = {
   name: 'Lima',
-  minCustomers: 23,
-  maxCustomers: 65,
-  avgCookies: 6.3,
+  minCustomers: 2,
+  maxCustomers: 16,
+  avgCookies: 4.6,
   customersPerHour: [], //here i will push a number of customers for each hour(14n) then each no will be multiplied with avg
   cookiesPerHour: [],
   //This method pushes random numbers to the array
@@ -325,6 +366,15 @@ let Lima = {
 
       liElement.textContent= `${hours[i]} : ${this.cookiesPerHour[i]} cookies`;
     }
+    let total = this.cookiesPerHour.reduce((a, b) => {
+      return a + b;
+    });
+
+    let totalElement = document.createElement('li');
+
+    ulElement.appendChild(totalElement);
+
+    totalElement.textContent= `Total : ${total}`;
   }
 };
 
