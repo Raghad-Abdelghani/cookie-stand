@@ -10,7 +10,8 @@ section{
   h1{
     color:#283f15;
     float:left;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Dancing Script', cursive;
+    font-size: xx-large;
   }
 
   #logo{

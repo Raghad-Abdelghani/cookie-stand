@@ -568,12 +568,15 @@ function submitter(event){
 
 
   for (let i = 0; i < stores.length; i++) {
+    stores[i].getCustomersEachHour();
     stores[i].getCookiesEachHour();
     stores[i].render();
   }
 
   footerTotalRow();
+  
 }
+
 
 
 
